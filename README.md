@@ -11,7 +11,7 @@ Updates CloudFlare for DDNS
 
 Rename example conf (Fill out cfuser,cfkey,cfzonekey,cf_wan_host and cf_private_host before next step)
 ```bash
-$ mv cf-ddns_example.conf cf-ddns.conf
+$ cp -rp cf-ddns_example.conf cf-ddns.conf
 ```
 Get ID of the wan host entry (will be automatically added to cf-ddns.conf)
 ```bash

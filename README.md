@@ -1,19 +1,37 @@
 # cloudflare-ddns
-Scripts for updating the Cloudflare DDNS Api
+Scripts for updating the Cloudflare DDNS Api on [DigitalOcean](https://m.do.co/c/f1f2b475fca0) Droplets.
 
-These scripts are working as at 08-Aug-2018. Changes to the api by CloudFlare will likely break them.
+forked and heavily modified from [jonegerton/cloudflare-ddns](https://github.com/jonegerton/cloudflare-ddns)
 
-CloudFlare's documentation for the Apis used [is here](https://api.cloudflare.com).
-
-These scripts are also discussed [at my blog here](http://www.jonegerton.com/raspberrypi/cloudflare-ddns-updates-aug-2018-edition/)
-
-####cf-ddns.sh:
+#### cf-ddns.sh:
 
 Updates CloudFlare for DDNS
-Based on the commented update by @deluxor on here: https://gist.github.com/larrybolt/6295160
-Since modified to track CloudFlare API updates
 
-####cf-ddns-read.sh:
+#### Usage:
 
-Reads CloudFlare DNS settings
-Mainly required for getting the home id parameter for the dns entry to set in the cf-ddns script
+Rename example conf (Fill out cfuser,cfkey,cfzonekey,cf_wan_host and cf_private_host before next step)
+```bash
+$ mv cf-ddns_example.conf cf-ddns.conf
+```
+Get ID of the wan host entry (will be automatically added to cf-ddns.conf)
+```bash
+$ cf-ddns.sh -rw 
+```
+Get ID of the private host entry (will be automatically added to cf-ddns.conf)
+```bash
+$ cf-ddns.sh -rp
+```
+Update WAN IP
+```bash
+$ cf-ddns.sh -w
+```
+
+Update Private IP
+```bash
+$ cf-ddns.sh -p
+```
+
+Show help screen
+```bash
+$ cf-ddns.sh -h
+```

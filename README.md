@@ -31,6 +31,11 @@ Update Private IP
 $ cf-ddns.sh -p
 ```
 
+Update both WAN and Private IPs
+```bash
+$ cf-ddns.sh -c
+```
+
 Show help screen
 ```bash
 $ cf-ddns.sh -h

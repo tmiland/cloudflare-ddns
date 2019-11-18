@@ -38,6 +38,7 @@ showhelp() {
   echo '-rp | --readprivate: Get ID of the private host entry'
   echo '-w  | --wan: Update WAN IP'
   echo '-p  | --private: Update Private IP'
+  echo '-c  | --combined: Update both WAN and Private IPs'
 }
 
 # Load user settings
@@ -148,6 +149,11 @@ while [ "$1" ]; do
       exit
       ;;
     '--private' | '-p' )
+      update_private_ip
+      exit
+      ;;
+    '--combined' | '-c' )
+      update_wan_ip
       update_private_ip
       exit
       ;;

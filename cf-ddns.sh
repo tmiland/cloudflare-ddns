@@ -18,9 +18,17 @@
 # when the WAN IP has changed. Log output is minimal, so shouldn't grow too large.
 #
 # Use strictly at your own risk
+# Detect absolute and full path as well as filename of this script
+cd "$(dirname $0)"
+CURRDIR=$(pwd)
+SCRIPT_FILENAME=$(basename $0)
+cd - > /dev/null
+sfp=$(readlink -f "${BASH_SOURCE[0]}" 2>/dev/null || greadlink -f "${BASH_SOURCE[0]}" 2>/dev/null)
+if [ -z "$sfp" ]; then sfp=${BASH_SOURCE[0]}; fi
+SCRIPT_DIR=$(dirname "${sfp}")
 
 load_conf() {
-  CONF="cf-ddns.conf"
+  CONF="${CURRDIR}/cf-ddns.conf"
   if [ -f "$CONF" ] && [ ! "$CONF" == "" ]; then
     source $CONF
   else

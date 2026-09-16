@@ -1,4 +1,6 @@
 # cloudflare-ddns
+[![Sponsor @tmiland](https://img.shields.io/badge/Sponsor-%40tmiland-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/tmiland)
+
 Scripts for updating the Cloudflare DDNS Api on [DigitalOcean](https://m.do.co/c/f1f2b475fca0) Droplets.
 
 forked and heavily modified from [jonegerton/cloudflare-ddns](https://github.com/jonegerton/cloudflare-ddns)
